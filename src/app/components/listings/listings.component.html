@@ -1,0 +1,9 @@
+<div class="container text-center">
+<h1>Listings</h1>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let listing of listings">
+    <a [routerLink]="['/listing/'+listing.$key]"><h3>{{listing.title}} <small>{{listing.city}}</small></h3></a>
+  </li>
+</ul>
+<li><a [routerLink]="['/add-listing']">Add List</a></li>
+</div>

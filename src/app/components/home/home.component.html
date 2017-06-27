@@ -1,0 +1,14 @@
+<div class="flex">
+<div class="jumbotron text-center">
+  <div class="container">
+    <h1>Property Listings</h1>
+    <p *ngIf="!(afAuth.authState | async)">View all available properties near you!</p>
+    <a (click)="login()" *ngIf="!(afAuth.authState | async)"><img src="assets/images/google.png" style="height: 50px; width: 275px"></a>
+    <ul class="list-group" *ngIf="(afAuth.authState | async)">
+    <li class="list-group-item"><a *ngIf="(afAuth.authState | async)" (click)="logout()" [routerLink]="['/listings']">View Listings</a></li>
+    <br>
+    <li class="list-group-item"><a *ngIf="(afAuth.authState | async)" (click)="logout()" [routerLink]="['/add-listing']">Add Listings</a></li>
+    </ul>
+  </div>
+</div>
+</div>
